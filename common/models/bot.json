@@ -1,0 +1,55 @@
+{
+  "name": "bot",
+  "plural": "bots",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "temperature": {
+      "type": "number",
+      "required": true,
+      "default": 1
+    },
+    "system_prompt": {
+      "type": "string"
+    },
+    "re_prompt": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "string"
+    },
+    "enabled": {
+      "type": "boolean",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "category_name": {
+      "type": "string"
+    },
+    "categoryId": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "category": {
+      "type": "belongsTo",
+      "model": "category",
+      "foreignKey": "categoryId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
